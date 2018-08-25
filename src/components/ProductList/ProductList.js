@@ -4,14 +4,7 @@ import './ProductList.css';
 import Heading from '../Heading/Heading.js';
 import Product from './Product/Product.js';
 
-const listOfProducts = {
-  Fruits: ['Mango', 'Apple', 'Kiwi', 'Banana', 'Apricots', 'Cherimoya', 'Grapefruit'],
-  Vegetables: ['Cabbage', 'Cauliflower', 'Cucumber', 'Eggplant', 'Mushrooms'],
-  Meat: ['Beef', 'Chicken', 'Beef ribs'],
-  Bread: ['Bagel', 'Banana bread', 'Beer bread', 'Black bread', 'Borodinsky'],
-  Cheese: ['Roquefort', 'Camembert', 'Cotija', 'Feta', 'Mozzarella', 'Emmental'],
-  Snacks: ['Crêpe', 'Doughnut', 'Pancakes', 'Chocolate', 'Nougat']
-};
+import listOfProducts from '../../itemsList.js';
 
 const productList = (props) => {
   return (
@@ -19,8 +12,8 @@ const productList = (props) => {
       <Heading header={'Product list'} />
       {listOfProducts[props.category].map((item) =>
         <Product
-          key={item}
-          productName={item}
+          key={item.name}
+          productName={item.name}
         />
       )}
     </div>
