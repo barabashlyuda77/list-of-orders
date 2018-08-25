@@ -3,7 +3,10 @@ import './Product.css';
 
 const product = (props) => {
   return (
-    <div className="product">{props.productName}</div>
+    <div className="product">
+      <div className="title">{props.productName}</div>
+      <button className="add">Add</button>
+    </div>
   );
 }
 
