@@ -3,10 +3,14 @@ import './Orders.css';
 
 import Order from './Order/Order.js';
 
-const orders = () => {
+const orders = (props) => {
   return (
     <div className="orders">
-      <Order />
+      {props.addedProducts.map((product) =>
+        <Order
+          product={product}
+        />
+      )}
     </div>
   );
 }

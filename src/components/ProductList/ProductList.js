@@ -14,6 +14,7 @@ const productList = (props) => {
         <Product
           key={item.name}
           productName={item.name}
+          onClick={props.onAdd}
         />
       )}
     </div>

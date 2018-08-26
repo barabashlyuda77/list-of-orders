@@ -7,11 +7,17 @@ import ShoppingCart from './components/ShoppingCart/ShoppingCart.js';
 
 class App extends Component {
   state = {
-    category: 'Fruits'
+    category: 'Fruits',
+    products: []
   };
 
   changeCategory = (category) => {
     this.setState({ category });
+  }
+
+  addProduct = (product) => {
+    const products = [...this.state.products, product];
+    this.setState({ products });
   }
 
   render() {
@@ -23,8 +29,11 @@ class App extends Component {
         />
         <ProductList
           category={this.state.category}
+          onAdd={this.addProduct}
         />
-        <ShoppingCart />
+        <ShoppingCart
+          selectedProducts={this.state.products}
+        />
       </div>
     );
   }

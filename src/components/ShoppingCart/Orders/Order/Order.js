@@ -3,10 +3,10 @@ import './Order.css';
 
 import listOfProducts from '../../../../itemsList.js';
 
-const order = () => {
+const order = (props) => {
   return (
     <div className="order">
-      <div>{`1 x Banana`}</div>
+      <div>{`1 x ${props.product}`}</div>
       <button className="delete">Delete</button>
     </div>
   );

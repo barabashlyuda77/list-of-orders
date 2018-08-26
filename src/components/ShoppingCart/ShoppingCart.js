@@ -5,11 +5,13 @@ import Heading from '../Heading/Heading.js';
 import Orders from './Orders/Orders.js';
 import TotalPrice from './TotalPrise/TotalPrise.js';
 
-const shoppingCart = () => {
+const shoppingCart = (props) => {
   return (
     <div className="shoppingCart">
       <Heading header={'Shoping cart'} />
-      <Orders />
+      <Orders
+        addedProducts={props.selectedProducts}
+      />
       <TotalPrice />
     </div>
   );
