@@ -20,6 +20,12 @@ class App extends Component {
     this.setState({ products });
   }
 
+  deleteProduct = (product) => {
+    const products = [...this.state.products];
+    products.splice(products.indexOf(product), 1);
+    this.setState({ products });
+  }
+
   render() {
     return (
       <div className="app">
@@ -33,6 +39,7 @@ class App extends Component {
         />
         <ShoppingCart
           selectedProducts={this.state.products}
+          activateDelete={this.deleteProduct}
         />
       </div>
     );

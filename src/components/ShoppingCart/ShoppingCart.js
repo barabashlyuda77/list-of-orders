@@ -11,6 +11,7 @@ const shoppingCart = (props) => {
       <Heading header={'Shoping cart'} />
       <Orders
         addedProducts={props.selectedProducts}
+        sendProductName={props.activateDelete}
       />
       <TotalPrice />
     </div>
