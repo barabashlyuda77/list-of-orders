@@ -5,18 +5,15 @@ import Heading from '../Heading/Heading.js';
 import Orders from './Orders/Orders.js';
 import TotalPrice from './TotalPrise/TotalPrise.js';
 
-class ShoppingCart extends Component {
-  state = {
-    totalPrice: 0
-  }
+import priceList from '../../priseList.js';
 
-  // updateTotal = (amount = 0) => {
-  //   const total = {...this.state};
-  //   const updatedTotal = total.totalPrice + amount;
-  //   this.setState({ totalPrice: updatedTotal })
-  // }
+class ShoppingCart extends Component {
+  getPrice = item => priceList[item];
 
   render() {
+    const totalPrice = this.props.selectedProducts
+      .reduce((temporaryPrice, item) => temporaryPrice + this.getPrice(item), 0);
+
     return (
       <div className="shoppingCart">
         <Heading header={'Shoping cart'} />
@@ -25,7 +22,7 @@ class ShoppingCart extends Component {
           sendProductName={this.props.activateDelete}
         />
         <TotalPrice
-          totalPrice={this.state.totalPrice}
+          totalPrice={totalPrice}
         />
       </div>
     );
